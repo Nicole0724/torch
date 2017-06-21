@@ -487,6 +487,24 @@ ul {
                 outline: none;
                 text-align: right;
             }
+            .editor-select {
+                height: 5.3rem;
+                font-size: 1.5rem;
+                min-width: 3rem;
+                color: #85878b;
+                border: none;
+                outline: none;
+                text-align: right;
+                appearance: none;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                background-color: #FFFFFF;
+                z-index: 5;
+                pointer-events: auto;
+                option {
+                    text-align: right;
+                }
+            }
         }
         .text-img-box {
             i.icon-img {
@@ -765,5 +783,39 @@ ul {
         border: none;
         outline: none;
         padding: 1.2rem;
+    }
+}
+
+#volList {
+    .afScrollPanel {
+        height: 100%;
+    }
+    .afScrollbar {
+        width: 0 !important;
+    }
+    #volListContent,
+    .wrapper {
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        bottom: 0px;
+        width: 100%;
+        background: #f4f4f4;
+        overflow: hidden;
+        padding: 0;
+    }
+    .pullDown,
+    .pullUp,
+    .pulldown-tips {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .pulldown-tips {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        width: 100%;
     }
 }

@@ -130,6 +130,8 @@ ul { list-style: none; }
 .list-panel .list-box .onoroff-panel { padding-right: 0.9rem; padding-top: 1.3rem; }
 .list-panel .list-box .text-input-box { height: 5.3rem; padding: 0.1rem 1rem 0; }
 .list-panel .list-box .text-input-box input.editor-input { height: 5.3rem; font-size: 1.5rem; color: #85878b; border: none; outline: none; text-align: right; }
+.list-panel .list-box .text-input-box .editor-select { height: 5.3rem; font-size: 1.5rem; min-width: 3rem; color: #85878b; border: none; outline: none; text-align: right; appearance: none; -moz-appearance: none; -webkit-appearance: none; background-color: #FFFFFF; z-index: 5; pointer-events: auto; }
+.list-panel .list-box .text-input-box .editor-select option { text-align: right; }
 .list-panel .list-box .text-img-box i.icon-img { display: inline-block; height: 5.5rem; width: 3.95rem; background-size: 3.60rem auto; }
 .list-panel .list-box .btu-box { width: auto; height: 5.3rem; padding: 0.65rem 0; }
 .list-panel .list-box .btu-box a { display: inline-block; height: 100%; line-height: 4rem; font-size: 1.2rem; background-color: #CCCCCC; }
@@ -187,5 +189,11 @@ ul { list-style: none; }
 
 #subPayCheck input.color-paleRed { color: #de443c !important; }
 #subPayCheck textarea.leave-info { width: 100%; height: 10rem; color: #85878b; border: none; outline: none; padding: 1.2rem; }
+
+#volList .afScrollPanel { height: 100%; }
+#volList .afScrollbar { width: 0 !important; }
+#volList #volListContent, #volList .wrapper { height: 100%; position: absolute; z-index: 1; top: 0px; bottom: 0px; width: 100%; background: #f4f4f4; overflow: hidden; padding: 0; }
+#volList .pullDown, #volList .pullUp, #volList .pulldown-tips { height: 40px; line-height: 40px; text-align: center; }
+#volList .pulldown-tips { position: absolute; top: -40px; left: 0; width: 100%; }
 
 /*# sourceMappingURL=global.css.map */

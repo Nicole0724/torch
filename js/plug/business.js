@@ -301,59 +301,12 @@ function splitName(type) {
 	return str;
 }
 
-function loadFunc(url, params, funcs, headtype) {
-	var urlHead = webContent.rootUrl;
-	if(headtype == 0) {
-		urlHead = webContent.mockupsvr;
-	}
-	$.getJSON(
-		urlHead + url,
-		params,
-		function(data) {
-			$.ui.hideMask();
-			if(data.hasOwnProperty("failed")) {
-				$.ui.popup(data.failed.message);
-			} else {
-				funcs.funcSuccessful(data);
-			}
-		},
-		function(msg) {
-			$.ui.hideMask();
-			console.log("load data error:" + msg);
-			$.ui.popup("系统发生异常,请联系管理员.<br>" + msg);
-		});
-}
-
 function loginImgOnOrOff(obj) {
 	if(obj.value == "") {
 		$(obj).parent().find("i").removeClass("loginImgOn");
 	} else {
 		$(obj).parent().find("i").addClass("loginImgOn");
 	}
-}
-//发送验证码后文本样式
-function sendVerificationCode_textstyle(obj, time) {
-	var container = $.ui.activeDiv.id;
-	var restartsend = null;
-	$(obj).css({
-		"color": "#c1c1c1"
-	});
-	restartsend = setInterval(function() {
-		if(time > 0) {
-			time -= 1;
-			$(obj).html(time + "秒后重新获取");
-			$(obj).css({
-				"color": "#c1c1c1"
-			});
-		} else if(time == 0) {
-			$(obj).text("点击获取验证码");
-			$(obj).css({
-				"color": "#05b1b3"
-			});
-			$(obj).attr("onclick", container + "_sendVerificationCode(this)");
-			clearInterval(restartsend);
-		}
-	}, 1000);
 }
 //进入页面时，回滚到顶部
 function pageScrollToTop() {

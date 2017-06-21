@@ -22,14 +22,13 @@
 
 <script type="text/javascript">
 	function loadlogin(obj) {
-		pageRoute.initLogin();
+		window.localStorage.setItem(G_COMKEY + ".token", "");
 		$.ui.hideMask();
 		$("#login .login-btu").text("登录" + G_SERVERS[G_ENV].name);
 		var oldUsername = window.localStorage.getItem(G_COMKEY + ".loginSet");
 		if(oldUsername != undefined && oldUsername != '') {
 			$("#login input[name='account']").val(oldUsername);
 		}
-		//		$("#login input[name='password']").val('');
 		$("#login .login-btu").on('click', function() {
 			login.postLogin(this);
 		});

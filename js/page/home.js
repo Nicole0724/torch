@@ -5,12 +5,15 @@
 			/*director理事/trustee监事/finance财务/secretary秘书/support后勤/teacher老师*/
 			var userStatus = 3;
 			var role = window.localStorage.getItem(G_COMKEY + ".role");
+			var userType = window.localStorage.getItem(G_COMKEY + ".userType");
 			role = JSON.parse(role);
-			if(role.roleCode == "director" || role.roleCode == "trustee" || role.roleCode == "finance" || role.roleCode == "secretary" || role.roleCode == "support") {
-				userStatus = 1;
-			} else if(role.roleCode == "teacher") {
-				userStatus = 2;
-			} else {
+			if(userType == 0) {
+				if(role.roleCode == "teacher") {
+					userStatus = 2;
+				} else {
+					userStatus = 1;
+				}
+			} else if(userType == 1) {
 				userStatus = 3;
 			}
 			var outMenu;
